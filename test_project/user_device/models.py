@@ -15,15 +15,6 @@ class Workers(models.Model):
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
 
-    def save(self):
-        super().save()
-        img = Image.open(self.image.path)
-
-        if img.height > 100 or img.width > 100:
-            output_size = (100, 100)
-            img.thumbnail(output_size)
-            img.save(self.image.path)
-
 
 class Device(models.Model):
     device = models.CharField(max_length=255)
