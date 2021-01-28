@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="col4">
+        <div class="card" style="width: 18rem;">
+            <img src="{{ worker.image.url }}" class="card-img-top" alt="">
+            <div class="card-body">
+                <h5 class="card-title">{{ worker.first_name }} {{ worker.last_name }}</h5>
+                <p class="card-text">{{ worker.phone }}</p>
+                <p class="card-text">{{ worker.company }}</p>
+                <a class="btn btn-primary" href="/workers/{{ worker.pk }}/edit/"
+                   role="button">Edit</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{ device.device }}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{ device.price }}$</li>
+            <li class="list-group-item">Paid by: {{ device.paid_by }}</li>
+            <li class="list-group-item"> Who uses: {{ device.used_by }}</li>
+            <li class="list-group-item">Start use: {{ device.start_date }}</li>
+        </ul>
+        <p class="card-text">{{ device.comment }}</p>
+        <div class="card-body">
+            <a href="{{ device.configuration }}"
+               class="card-link">{{ device.configuration }} </a>
+            <a class="btn btn-primary" href="/devices/{{ device.pk }}/edit/"
+               role="button">Edit</a>
+        </div>
+    </div>
+{% endblock %}

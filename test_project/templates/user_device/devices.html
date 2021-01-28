@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            {% for device in object_list %}
+                <div class="col-4">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Device
+                                name: {{ device.device }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">
+                                Price: {{ device.price }}$</h6>
+                            <h6 class="card-subtitle mb-2 text-muted">
+                                Paid by {{ device.paid_by }}</h6>
+                            <p class="card-text"></p>
+                            <a href="{{ device.configuration }}"
+                               class="card-link">{{ device.configuration }} </a><br>
+                            <a class="btn btn-primary" href="/devices/{{ device.pk}}/" role="button">Detail</a>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
